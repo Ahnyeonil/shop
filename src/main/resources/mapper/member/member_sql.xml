@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ahn.shop.member.mapper.MemberMapper">
+
+    <select id="selectList" parameterType="Map" resultType="ahn.shop.member.dto.MemberDto">
+        SELECT ID
+            , MEMBER_ID
+            , PASSWORD
+            , NAME
+            , AGE
+            , PHONE_NUM
+            , EMAIL
+        FROM MEMBER
+    </select>
+
+    <select id="selectMember" parameterType="Map" resultType="ahn.shop.member.dto.MemberDto">
+        SELECT ID
+        , MEMBER_ID
+        , PASSWORD
+        , NAME
+        , AGE
+        , PHONE_NUM
+        , EMAIL
+        FROM MEMBER
+        WHERE ID = #{memberId}
+    </select>
+
+
+</mapper>

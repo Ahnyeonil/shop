@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+  <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+  <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>상품 Id</th>
+        <th>상품명</th>
+        <th>가격</th>
+        <th>수량</th>
+        <th>등록자</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${itemDto}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.price}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.register}"></td>
+        <td>
+          <form role="form" th:action="@{/item/{id}/itemDelete (id=${item.id})}" method="post">
+            <a href="#" th:href="@{/item/{id}/itemInfo (id=${item.id})}" class="btn btn-primary" role="button">상세</a>
+            <button type="submit" class="btn btn-danger">삭제</button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <a href="#" th:href="@{/item/itemInsert}" class="btn btn-primary" role="button">상품 생성</a>
+  <div th:replace="fragments/footer :: footer"/>
+</div> <!-- /container -->
+</body>
+</html>

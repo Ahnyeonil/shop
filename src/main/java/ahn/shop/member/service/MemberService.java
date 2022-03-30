@@ -13,13 +13,30 @@ public class MemberService {
 
     private final MemberMapper memberMapper;
 
+    // 사용자 목록 조회
     public List<MemberDto> selectList(){
         List<MemberDto> memberList = memberMapper.selectList();
         return memberList;
     }
 
-    public MemberDto selectMember(Long memberId){
-        MemberDto memberInfo = memberMapper.selectMember(memberId);
+    // 사용자 상세 조회
+    public MemberDto selectMember(Long id){
+        MemberDto memberInfo = memberMapper.selectMember(id);
         return memberInfo;
+    }
+
+    // 사용자 등록
+    public void insertMember(MemberDto memberDto) {
+        memberMapper.insertMember(memberDto);
+    }
+
+    // 사용자 수정
+    public void updateMember(MemberDto memberDto) {
+        memberMapper.updateMember(memberDto);
+    }
+
+    // 사용자 삭제
+    public void deleteMember(Long id){
+        memberMapper.deleteMember(id);
     }
 }

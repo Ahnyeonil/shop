@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Default Page</title>
+    <title>AhnYI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
 </head>
+
 <body>
-    <p>Ahn Shop!</p>
-    <p>Main Page!</p>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Ahn SHOP</h1>
+        <p>
+            <a class="btn btn-lg btn-primary" href="/member/memberList">사용자 관리</a>
+            <a class="btn btn-lg btn-success" href="/item/itemList">상품 관리</a>
+            <a class="btn btn-lg btn-secondary" href="/order/orderList">주문 관리</a>
+        </p>
+    </div>
+</div> <!-- /container -->
+
 </body>
 </html>

@@ -12,10 +12,10 @@ spring:
     password:
 
 #mybatis
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
 
 logging:
   level:
-    org.hibernate.SQL: debug
+    root: debug

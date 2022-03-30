@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ahn.shop.item.mapper.ItemMapper">
+
+    <select id="selectList" resultType="ItemDto">
+        SELECT A.ID
+        , A.NAME
+        , A.PRICE
+        , A.QUANTITY
+        , B.NAME AS REGISTER
+        FROM ITEM A
+        JOIN MEMBER B
+        ON A.REGISTER_ID = B.ID
+        ORDER BY A.ID DESC
+    </select>
+</mapper>

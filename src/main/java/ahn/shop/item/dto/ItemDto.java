@@ -23,4 +23,8 @@ public class ItemDto {
     private int quantity;
 
     private int registerId;
+
+    private String createDate;
+
+    private String register;
 }

@@ -30,7 +30,7 @@ public class ItemMapper {
     }
 
     public void updateItem(ItemDto item){
-        sqlSession.update(NAMESPACE + "updatItem", item);
+        sqlSession.update(NAMESPACE + "updateItem", item);
     }
 
     public void deleteItem(Long id){

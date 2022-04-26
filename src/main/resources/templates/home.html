@@ -1,25 +1,40 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>AhnYI</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-
-<div class="container">
-
-    <div class="jumbotron">
-        <h1>Ahn SHOP</h1>
-        <p>
-            <a class="btn btn-lg btn-primary" href="/member/memberList">사용자 관리</a>
-            <a class="btn btn-lg btn-success" href="/item/itemList">상품 관리</a>
-            <a class="btn btn-lg btn-secondary" href="/order/orderList">주문 관리</a>
-        </p>
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>홈 화면</h2>
     </div>
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg" type="button" th:onclick="|location.href='@{/member/memberList}'|">
+                회원 관리
+            </button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-dark btn-lg" th:onclick="|location.href='@{/item/itemList}'|" type="button">
+                상품 관리
+            </button>
+        </div>
+    </div>
+<!--    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg" type="button" th:onclick="|location.href='@{/member/memberInsertForm}'|">
+                회원 가입
+            </button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-dark btn-lg" th:onclick="|location.href='@{/login}'|" type="button">
+                로그인
+            </button>
+        </div>
+    </div>
+-->
+    <hr class="my-4">
 </div> <!-- /container -->
-
 </body>
 </html>

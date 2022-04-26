@@ -4,13 +4,56 @@
 
     <select id="selectList" resultType="ItemDto">
         SELECT A.ID
-        , A.NAME
-        , A.PRICE
-        , A.QUANTITY
-        , B.NAME AS REGISTER
+            , A.NAME
+            , A.PRICE
+            , A.QUANTITY
+            , A.REGISTER_ID AS REGISTER
         FROM ITEM A
-        JOIN MEMBER B
-        ON A.REGISTER_ID = B.ID
         ORDER BY A.ID DESC
     </select>
+
+    <select id="selectItem" parameterType="Map" resultType="ItemDto">
+        SELECT A.ID
+            , A.NAME
+            , A.PRICE
+            , A.QUANTITY
+            , A.REGISTER_ID AS REGISTER
+        FROM ITEM A
+        WHERE A.ID = #{id}
+        ORDER BY A.ID DESC
+    </select>
+
+    <insert id="insertItem" parameterType="Map" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO ITEM (
+            NAME
+            , PRICE
+            , QUANTITY
+            , REGISTER_ID
+            , CREATE_DATE
+        ) VALUES (
+            #{name}
+            , #{price}
+            , #{quantity}
+            , 1
+            , SYSDATE
+        )
+    </insert>
+
+    <update id="updateItem" parameterType="Map">
+        UPDATE ITEM SET
+            NAME = #{name}
+            , PRICE = #{price}
+            , QUANTITY = #{quantity}
+        WHERE ID = #{id}
+    </update>
+
+    <delete id="deleteItem" parameterType="Map">
+        DELETE ITEM
+        WHERE ID = #{id}
+    </delete>
+
+    <delete id="deleteItemByMember" parameterType="Map">
+        DELETE ITEM
+        WHERE REGISTER_ID = #{id}
+    </delete>
 </mapper>

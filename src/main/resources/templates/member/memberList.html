@@ -27,7 +27,7 @@
                     <td th:text="${member.phoneNum}"></td>
                     <td th:text="${member.email}"></td>
                     <td>
-                        <form role="form" th:action="@{/member/{id}/memberDelete (id=${member.id})}" method="post">
+                        <form role="form" th:action="@{/member/{id}/deleteMember (id=${member.id})}" method="post">
                             <a href="#" th:href="@{/member/{id}/memberInfo (id=${member.id})}" class="btn btn-primary" role="button">상세</a>
                             <button type="submit" class="btn btn-danger">삭제</button>
                         </form>

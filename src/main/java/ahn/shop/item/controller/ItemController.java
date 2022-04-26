@@ -41,19 +41,19 @@ public class ItemController {
         return "item/itemInsertForm";
     }
 
-    @PostMapping("item/itemInsert")
+    @PostMapping("item/insertItem")
     public String insertItem(ItemDto itemDto) {
         itemService.insertItem(itemDto);
         return "redirect:/item/itemList";
     }
 
-    @PostMapping("item/{id}/itemUpdate")
+    @PostMapping("item/{id}/updateItem")
     public String updateItem(@ModelAttribute ItemDto itemDto) {
         itemService.updateItem(itemDto);
         return "redirect:/item/{id}/itemInfo";
     }
 
-    @PostMapping("item/{id}/itemDelete")
+    @PostMapping("item/{id}/deleteItem")
     public String deleteItem(@PathVariable("id") Long id, Model model) {
         itemService.deleteItem(id);
 

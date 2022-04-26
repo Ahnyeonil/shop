@@ -14,7 +14,7 @@
         ORDER BY ID DESC
     </select>
 
-    <select id="selectMember" parameterType="Long" resultType="MemberDto">
+    <select id="selectMember" parameterType="Map" resultType="MemberDto">
         SELECT ID
         , MEMBER_ID
         , PASSWORD
@@ -61,7 +61,7 @@
         WHERE ID = #{id}
     </update>
 
-    <delete id="deleteMember" parameterType="Long">
+    <delete id="deleteMember" parameterType="Map">
         DELETE MEMBER
         WHERE ID = #{id}
     </delete>

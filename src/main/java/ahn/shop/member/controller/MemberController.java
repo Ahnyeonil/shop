@@ -40,19 +40,19 @@ public class MemberController {
         return "member/memberInsertForm";
     }
 
-    @PostMapping("member/memberInsert")
+    @PostMapping("member/insertMember")
     public String insertMember(MemberDto memberDto) {
         memberService.insertMember(memberDto);
         return "redirect:/member/memberList";
     }
 
-    @PostMapping("member/{id}/memberUpdate")
+    @PostMapping("member/{id}/updateMember")
     public String updateMember(@ModelAttribute MemberDto memberDto) {
         memberService.updateMember(memberDto);
         return "redirect:/member/{id}/memberInfo";
     }
 
-    @PostMapping("member/{id}/memberDelete")
+    @PostMapping("member/{id}/deleteMember")
     public String deleteMember(@PathVariable("id") Long id, Model model) {
         memberService.deleteMember(id);
 

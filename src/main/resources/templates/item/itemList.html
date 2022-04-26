@@ -8,12 +8,11 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>#</th>
-        <th>상품 Id</th>
+        <th>상품번호</th>
         <th>상품명</th>
         <th>가격</th>
         <th>수량</th>
-        <th>등록자</th>
+        <th>판매자</th>
       </tr>
       </thead>
       <tbody>
@@ -24,7 +23,7 @@
         <td th:text="${item.quantity}"></td>
         <td th:text="${item.register}"></td>
         <td>
-          <form role="form" th:action="@{/item/{id}/itemDelete (id=${item.id})}" method="post">
+          <form role="form" th:action="@{/item/{id}/deleteItem (id=${item.id})}" method="post">
             <a href="#" th:href="@{/item/{id}/itemInfo (id=${item.id})}" class="btn btn-primary" role="button">상세</a>
             <button type="submit" class="btn btn-danger">삭제</button>
           </form>
